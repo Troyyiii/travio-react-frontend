@@ -5,13 +5,16 @@
   "scripts": {
     "dev": "vite --port 3000",
     "start": "vite --port 3000",
-    "build": "vite build && tsc",
+    "build": "npm install --legacy-peer-deps && vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
     "check": "prettier --write . && eslint --fix",
     "routes": "bunx @tanstack/router-cli generate"
+  },
+  "overrides": {
+    "date-fns": "$date-fns"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -39,7 +42,8 @@
     "@tanstack/react-query": "^5.62.3",
     "@tanstack/react-router": "^1.86.1",
     "@tanstack/react-router-devtools": "^1.114.22",
-    "@tanstack/react-table": "^8.20.5",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/router-vite-plugin": "^1.123.2",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
